@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Health & Air Ecology Map — Claimed vs Actual</title>
+<meta name="description" content="Open database of air pollution health impacts: PM2.5, NO₂, O₃, SO₂. Verified via satellite data.">
+<link rel="icon" href="health-icon-loss.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo"><img src="health-logo.png" alt="Health Logo"> Health & Air Map</div>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="map.html">Map</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="rwa.html">RWA & Liquidity</a>
+    <a href="eco-token.html">ECO Token</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tokens.html">Tokens & Pay</a>
+    <a href="treasury.html">Treasury</a>
+    <a href="signal.html">Signal</a>
+    <a href="response.html">Right of Reply</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <h1>Health & Air: <span class="red">Claimed</span> vs <span class="green">Actual</span></h1>
+    <p>Open database of air pollution health impacts: PM2.5, NO₂, O₃, SO₂. Verified via satellite data. No source — no publication.</p>
+  </section>
+
+  <section id="live-counters"></section>
+  <section class="stats" id="stats"></section>
+  
+  <div class="filters">
+    <select id="filter-status">
+      <option value="">All statuses</option>
+      <option value="red">🔴 Gap confirmed</option>
+      <option value="green">🟢 Verified</option>
+      <option value="gray">⚫ Pending</option>
+    </select>
+    <select id="filter-region">
+      <option value="">All regions</option>
+      <option>Africa</option><option>Asia</option><option>Central Asia</option>
+      <option>Europe</option><option>North America</option><option>South America</option>
+      <option>Oceania</option><option>Middle East</option><option>Global</option>
+    </select>
+    <input id="filter-search" type="search" placeholder="Search city, country...">
+  </div>
+  
+  <div class="legend">
+    <span><i class="dot red"></i> 🔴 Gap confirmed</span>
+    <span><i class="dot green"></i> 🟢 Verified</span>
+    <span><i class="dot gray"></i> ⚫ Pending verification</span>
+  </div>
+  
+  <section id="cards" class="grid"></section>
+  <div id="pagination" class="pagination"></div>
+
+  <!-- CENTRAL ASIA HEALTH REPORTS -->
+  <section class="detail-block" style="border-left: 4px solid var(--cyan); margin-top: 50px;">
+    <h2>Central Asia Health & Air Reports</h2>
+    <p style="color:var(--muted); margin-bottom: 20px;">
+      In-depth reports on air pollution and health in Central Asia. 
+      Each report covers PM2.5, NO₂, health impacts, damage in USD, and short-term solutions.
+    </p>
+    <table style="width:100%;">
+      <thead><tr><th>Country / City</th><th>Focus</th><th>Health Cost (USD)</th><th>Report</th></tr></thead>
+      <tbody>
+        <tr><td>Uzbekistan — Tashkent</td><td>PM2.5 6x WHO, transport 16%</td><td>$500M</td><td><a href="report-health-uz.html" class="btn-primary" style="padding:4px 10px;font-size:12px;margin-top:0;">Read Report →</a></td></tr>
+        <tr><td>Kazakhstan — Almaty</td><td>Transport 60.6%, smog</td><td>$800M</td><td><a href="report-health-kz.html" class="btn-primary" style="padding:4px 10px;font-size:12px;margin-top:0;">Read Report →</a></td></tr>
+        <tr><td>Kyrgyzstan — Bishkek</td><td>120 days PM2.5 &gt; norm, peak 367 µg/m³</td><td>$300M</td><td><a href="report-health-kg.html" class="btn-primary" style="padding:4px 10px;font-size:12px;margin-top:0;">Read Report →</a></td></tr>
+        <tr><td>Tajikistan — Dushanbe</td><td>PM2.5 data scarce, transport 21% CO₂</td><td>$200M</td><td><a href="report-health-tj.html" class="btn-primary" style="padding:4px 10px;font-size:12px;margin-top:0;">Read Report →</a></td></tr>
+        <tr><td>Turkmenistan — Ashgabat</td><td>Dust, no public AQ monitoring</td><td>$100M</td><td><a href="report-health-tm.html" class="btn-primary" style="padding:4px 10px;font-size:12px;margin-top:0;">Read Report →</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- IFI TRACKER -->
+  <section class="detail-block" style="border-left: 4px solid var(--cyan); margin-top: 50px;">
+    <h2>Global Health & Air Projects (IFI Tracker)</h2>
+    <table style="width:100%;">
+      <thead><tr><th>Institution</th><th>Project</th><th>Focus</th><th>Link</th></tr></thead>
+      <tbody>
+        <tr><td><strong>WHO</strong></td><td>Ambient Air Pollution Database</td><td>Global PM2.5, NO₂, O₃</td><td><a href="https://www.who.int/data/gho/data/themes/air-pollution" target="_blank">View Data →</a></td></tr>
+        <tr><td><strong>OpenAQ</strong></td><td>Global Air Quality Monitoring</td><td>30,000+ stations</td><td><a href="https://openaq.org/" target="_blank">View Data →</a></td></tr>
+        <tr><td><strong>Sentinel-5P</strong></td><td>NO₂, SO₂, O₃, PM2.5</td><td>Daily global coverage</td><td><a href="https://sentinels.copernicus.eu/" target="_blank">View Data →</a></td></tr>
+        <tr><td><strong>World Bank</strong></td><td>Air Quality Assessment</td><td>Country-level health costs</td><td><a href="https://www.worldbank.org/en/topic/airquality" target="_blank">View Program →</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="detail-block" style="text-align:center; border-color: var(--cyan); margin-top: 40px;">
+    <h2>Support Verification</h2>
+    <p style="max-width: 600px; margin: 0 auto 15px auto;">We accept contributions to cover satellite monitoring and legal defense. Public wallets, multisig, on-chain route.</p>
+    <a href="tokens.html" class="btn-primary">View Tokens & Pay →</a>
+  </section>
+</main>
+<footer>
+  <p>Contact: <a href="mailto:ecologyoilgaz@gmail.com">ecologyoilgaz@gmail.com</a> ·
+    <a href="eco-token.html">ECO Token</a> ·
+    <a href="tokens.html">Tokens & Pay</a> ·
+    <a href="treasury.html">Treasury (Solana)</a> ·
+    <a href="methodology.html">Methodology</a>
+  </p>
+</footer>
+<script src="counter.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
